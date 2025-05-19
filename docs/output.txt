@@ -1,0 +1,50 @@
+| Address | Machine Code                  | Description                  |
+| ------- | ----------------------------- | ---------------------------- |
+| 4000    | 3E 0A                         | MVI A, 0AH                   |
+| 4002    | 06 05                         | MVI B, 05H                   |
+| 4004    | 0E 03                         | MVI C, 03H                   |
+| 4006    | 16 00                         | MVI D, 00H                   |
+| 4008    | 1E 00                         | MVI E, 00H                   |
+| 400A    | 26 00                         | MVI H, 00H                   |
+| 400C    | 2E 00                         | MVI L, 00H                   |
+| 400E    | 3C                            | INR A (Macro INCR\_AND\_ADD) |
+| 400F    | 47                            | MOV B, A                     |
+| 4010    | 81                            | ADD C                        |
+| 4011    | 57                            | MOV E, A                     |
+| 4012    | C3 1A 40                      | JMP CHECK\_COND (to 401A)    |
+| 4015    | FF                            | DB 0FFH                      |
+| 4016    | AB                            | DB 0ABH                      |
+| 4017    | CD                            | DB 0CDH                      |
+| 4018    | EF                            | DB 0EFH                      |
+| 4019    | A1                            | DB 0A1H                      |
+| 401A    | B2                            | DB 0B2H                      |
+| 401B    | C3                            | DB 0C3H                      |
+| 401C    | D4                            | DB 0D4H                      |
+| 401D    | 34 12                         | DW 1234H (little endian)     |
+| 401F    | 78 56                         | DW 5678H                     |
+| 4021    | BC 9A                         | DW 9ABCH                     |
+| 4023    | F0 DE                         | DW DEF0H                     |
+| 4025    | 65                            | MOV H, E                     |
+| 4026    | 2E 1A                         | MVI L, 1AH                   |
+| 4028    | C3 2B 40                      | JMP CONDITIONAL\_JUMP (402B) |
+| 402B    | 00                            | NOP                          |
+| 402C    | 00                            | NOP                          |
+| 402D    | 00                            | NOP                          |
+| 402E    | C3 30 40                      | JMP LOOP2 (4030)             |
+| 4031    | 04                            | INR B                        |
+| 4032    | 0C                            | INR C                        |
+| 4033    | C3 0E 40                      | JMP MAIN\_LOOP (400E)        |
+| 4036    | 01 02 03 04 05 06 07 08 09 0A | DB 01H to 0AH                |
+| 4040    | 0B 0C 0D 0E 0F 10 11 12 13 14 | DB 0BH to 14H                |
+| 404A    | 78 56                         | DW 5678H                     |
+| 404C    | BC 9A                         | DW 9ABCH                     |
+| 404E    | EF CD                         | DW CDEFH                     |
+| 4050    | 34 12                         | DW 1234H                     |
+| 4052    | 21 43                         | DW 4321H                     |
+| 4054    | 89 67                         | DW 6789H                     |
+| 4056    | 3E FF                         | MVI A, 0FFH (LABEL1)         |
+| 4058    | 80                            | ADD B                        |
+| 4059    | C3 5E 40                      | JMP LABEL3 (405E)            |
+| 405C    | 4F                            | MOV C, A (LABEL2)            |
+| 405D    | C3 56 40                      | JMP LABEL1 (4056)            |
+| 405E    | 76                            | HLT (LABEL3)                 |
